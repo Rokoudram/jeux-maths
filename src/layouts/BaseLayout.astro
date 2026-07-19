@@ -1,6 +1,6 @@
 ---
-import header from "../components/header.astro";
-import footer from "../components/footer.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/base_style.css";
 
 const { title = "Jeux mathématiques"} = Astro.props;
@@ -15,13 +15,13 @@ const { title = "Jeux mathématiques"} = Astro.props;
 
   <body>
 
-    <header />
+    <Header />
 
     <main>
         <slot />
     </main>
 
-    <footer />
+    <Footer />
 
   </body>
 
