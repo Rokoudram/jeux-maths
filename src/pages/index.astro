@@ -1,6 +1,7 @@
 ---
-
+import MySiteLayout from '../layouts/MySiteLayout.astro';
 ---
+
 
 <html lang="fr">
   <head>
@@ -10,6 +11,9 @@
   <body>
     <h1>Bonjour !</h1>
 
-    <p>Bienvenue sur mon site GitHub Pages.</p>
+    <MySiteLayout title="Page d'accueil">
+  		<p> Bienvenue sur ma page GitHub </p>
+	</MySiteLayout>
+
   </body>
 </html>
