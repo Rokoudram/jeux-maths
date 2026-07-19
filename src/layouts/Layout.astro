@@ -1,25 +1,30 @@
 ---
-const { title } = Astro.props;
+const { title = "Jeux mathématiques"} = Astro.props;
 ---
+
+<!doctype html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <title>{title}</title>
   </head>
+
   <body>
-    <nav>
-      <a href="#">Accueil</a>
-      <a href="#">Articles</a>
-      <a href="#">Contact</a>
-    </nav>
-    <h1>{title}</h1>
-    <article>
-      <slot /> <!-- Votre contenu est injecté ici -->
-    </article>
+
+    <header />
+
+    <main>
+        <slot />
+    </main>
+
+    <footer />
+
   </body>
+
   <style>
     h1 {
       font-size: 2rem;
     }
   </style>
+
 </html>
