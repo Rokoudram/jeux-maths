@@ -1,5 +1,5 @@
 ---
-import MySiteLayout from '../layouts/layout.astro';
+import layout from '../layouts/Layout.astro';
 ---
 
 
@@ -11,9 +11,8 @@ import MySiteLayout from '../layouts/layout.astro';
   <body>
     <h1>Bonjour !</h1>
 
-    <MySiteLayout title="Page d'accueil">
-  		<p> Bienvenue sur ma page GitHub </p>
-	</MySiteLayout>
-
+		<layout title="Page d'accueil">
+  			<p> Bienvenue sur ma page GitHub </p>
+		</layout>
   </body>
 </html>
