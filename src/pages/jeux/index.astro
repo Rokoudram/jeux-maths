@@ -6,41 +6,83 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 	<p> Page d'accueil des jeux </p>
 
     <nav>
-        <a href="/jeux-maths/jeux/jardiniers"> Bataille des jardiniers </a>
-        <a href="/jeux-maths/jeux/curvle"> Devine la courbe </a>
-    </nav>
+        <a href="/jeux-maths/jeux/jardiniers">
+            <div class="zoom">
+                <div class="card">
+                    Bataille des jardiniers
+                </div>
+            </div>
+        </a>
+
+        <a href="/jeux-maths/jeux/curvle">
+            <div class="zoom">
+                <div class="card">
+                    Devine la courbe
+                </div>
+            </div>
+        </a>
+</nav>
 
 </BaseLayout>
+
+
 
 <style>
 nav {
     display: flex;
     justify-content: center;
     gap: 5rem;
-    margin-top: 1rem;
-    padding: 20px;
 }
 
-nav a {flex: 1;
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
     display: flex;
     justify-content: center;
-    color:white;
+    align-items: center;
+
     width: 180px;
     height: 100px;
-    margin: 10px;
-    padding: 20px 36px 20px 36px;
+    padding: 20px;
+
+    background: #D7FFDF;
     border: 5px solid black;
     border-radius: 10px;
-    background: linear-gradient(
-    135deg,
-    #6a11cb 0%,
-    #2575fc 50%,
-    #00d4ff 100%
-);
+
+    transition: transform .65s ease;
 }
 
-nav a:hover {
-    color: #3a2242 ;
-    transform: scale(1.2);
+nav a:hover .card {
+    animation: shake .65s cubic-bezier(.36,.07,.19,.97);
 }
+
+.zoom {
+    transition: transform .65s ease;
+}
+
+nav a:hover .zoom {
+    transform: scale(1.25);
+}
+
+@keyframes shake {
+    10%,90% {
+        transform: rotate(-1deg);
+    }
+
+    25%,75% {
+        transform:  rotate(2deg);
+    }
+
+    40%,60% {
+        transform: rotate(-3deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
 </style>
