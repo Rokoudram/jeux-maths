@@ -5,7 +5,6 @@ const { title } = Astro.props;
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <BaseHead title={title}/>
   </head>
   <body>
     <nav>
@@ -17,7 +16,6 @@ const { title } = Astro.props;
     <article>
       <slot /> <!-- Votre contenu est injecté ici -->
     </article>
-    <Footer />
   </body>
   <style>
     h1 {
