@@ -12,7 +12,7 @@
         160deg, black, var(--transiback), var(--colback), var(--transiback), black
         );
     
-    --transispeed: 65ms ease;
+    --transispeed: 500ms ease;
 }
 
 html {
