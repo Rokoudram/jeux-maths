@@ -1,34 +1,43 @@
+/* ============================================================
+                    Thème global
+============================================================ */
+
+:root {
+    /* Palette de couleurs */
+    --colback: #2b003a;
+    --transiback: #180020;
+
+    /* Semantic */
+    --bg: linear-gradient(
+        160deg, black, var(--transiback), var(--colback), var(--transiback), black
+        );
+    
+    --transispeed: 65ms ease;
+}
+
 html {
   font-family: 'Helvetica';
+  scroll-behavior: smooth;
 }
+
+
+/* ============================================================
+                    Layout
+============================================================ */
 
 body {
-    background: linear-gradient(
-        160deg,
-        #000000,
-        #180020,
-        #2b003a,
-        #180020,
-        #000000
-    );
-  font-family: 'Helvetica';
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: #ffffff
-}
-
-
-nav a {
+    margin: 0;
+    background: var(--bg);
+    font-family: 'Helvetica';    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     color: white;
-    margin-right: 1rem;
-    text-decoration: none;
-}
+    }
 
 main {
     max-width: 900px;
-    margin: auto;
+    margin: 2rem auto;
     padding: 2rem;
     flex: 1;
 }
@@ -37,4 +46,20 @@ footer {
     text-align: center;
     padding: 0;
     color: gray;
+}
+
+
+
+/* ============================================================
+                Links
+============================================================ */
+
+a {
+    color: black;
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
 }

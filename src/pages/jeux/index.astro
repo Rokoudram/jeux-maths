@@ -1,71 +1,103 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sections } from "../../../config/liste-jeux";
 ---
 
+
 <BaseLayout title="Jeux">
-	<p> Page d'accueil des jeux </p>
+    <section class="intro">
+        <p>
+            Page d'accueil des jeux
+        </p>
+    </section>
 
-    <nav>
-        <a href="/jeux-maths/jeux/jardiniers">
-            <div class="zoom">
-                <div class="card">
-                    Bataille des jardiniers
-                </div>
-            </div>
-        </a>
+    <div class="grid">
+        {
+            sections.map(section => (
+                <div class="zoom">
+                    <a class="card" href={section.href}>
+                        <h2>{section.title}</h2>
 
-        <a href="/jeux-maths/jeux/curvle">
-            <div class="zoom">
-                <div class="card">
-                    Devine la courbe
+                        <p>
+                            {section.description}
+                        </p>
+
+                        <span>
+                            Jouer →
+                        </span>
+                    </a>
                 </div>
-            </div>
-        </a>
-</nav>
+            ))
+        }
+    </div>
 
 </BaseLayout>
 
 
 
 <style>
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
+.intro {
+    min-width: 50px;
+    max-width: 800px;
+    font-size: 1.2rem;
 }
 
-nav a {
-    text-decoration: none;
-    color: black;
+.intro p {
+    margin-bottom: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    grid-template-columns: repeat(3,240px);
+    gap: 4rem;
 }
 
 .card {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+    font-size: 0.85rem;
+    color: var(--colback);
 
-    width: 180px;
-    height: 100px;
+    width: 200px;
+    height: 120px;
     padding: 20px;
 
-    background: #D7FFDF;
-    border: 5px solid black;
+    background-color:white;
+    border: 5px solid var(--colback);
     border-radius: 10px;
 
-    transition: transform .65s ease;
+    text-decoration: none;
+
+    transition:
+        transform .65s ease,
+        transform var(--transition),
+        border-color var(--transition)
 }
 
-nav a:hover .card {
+.card:hover{
     animation: shake .65s cubic-bezier(.36,.07,.19,.97);
+    border-color: black;
 }
+
+.card h2 {
+    margin: 0 0 0 0 ;
+    font-size: 1.25rem;
+    color: #2b003a;
+}
+
 
 .zoom {
     transition: transform .65s ease;
 }
 
-nav a:hover .zoom {
-    transform: scale(1.25);
+.zoom:hover {
+    transform: scale(1.1);
 }
+
 
 @keyframes shake {
     10%,90% {
