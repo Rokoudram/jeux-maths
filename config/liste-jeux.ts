@@ -15,4 +15,12 @@ export const sections = [
         nav: true,
         nav_mobile:true,
     },
+     {
+        title: "Des chiffres et des chiffres",
+        href: "/jeux-maths/jeux/chiffres-chiffres ",
+        description:
+        "Combiner astucieusement les nombres devant vous pour obtenir le résultat demandé.",
+        nav: true,
+        nav_mobile:true,
+    },
 ];
